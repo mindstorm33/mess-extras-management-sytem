@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # my apps
     'mems_apps',
+
+    # third party apps,
+    "bootstrap4",
 ]
 
 MIDDLEWARE = [
