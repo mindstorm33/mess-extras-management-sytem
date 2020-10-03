@@ -2,10 +2,11 @@
 
 {% block content %} 
 
-<p>Heres the extras you've selected</p>
+<p>Here's the extras you've selected</p>
+
 <ul>
     {% for extra in selected_extras %}
-        <li>{{ extra.extras_type  }} - {{extra.quantity }} <a href="{% url 'mems_apps:remove_from_plate' extra.id %}"><button>remove</button></a></li>
+        <li>{{ extra.extras_type  }} - {{extra.quantity }}<a href="{% url 'mems_apps:remove_from_plate' extra.id %}"><button>remove</button></a></li>
         
     {% empty %}
         <li>No extras have been added yet.</li>
