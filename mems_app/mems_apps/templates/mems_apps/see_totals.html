@@ -1,0 +1,18 @@
+
+{% extends "mems_apps/student_base.html" %}
+
+{% block content %} 
+
+<p>summary of your totals</p>
+
+    <ul>
+        {% for record in records %}
+            <li>{{ record.order_id }} - {{ record.date }} - {{ record.food_name }} - {{ record.amount }}</li>
+        {% empty %}
+            <li>Nothing to show</li>
+        {% endfor %}
+    </ul>
+    <p>Total Amount = {{ total_amount }}</p>
+
+
+{% endblock content %}

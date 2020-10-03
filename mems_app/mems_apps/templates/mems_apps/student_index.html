@@ -1,0 +1,35 @@
+{% extends "mems_apps/student_base.html" %}
+
+{% block content %}
+<h3>Mess Extras Management System</h>
+<h4>Student Side</h4>
+
+    <p>Today's Extras</p>
+
+    <ul>
+        {% for extra in avail_extras %}
+            <li>{{ extra }} price: {{ extra.price }}
+                 Number of available coupons: {{ extra.quantity }}</li>
+        {% empty %}
+            <li>There are no extras today</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'mems_apps:add_to_plate' %}"><button>Add extras to plate</button></a> 
+    <a href="{% url 'mems_apps:see_plate' %}"><button>See Plate</button></a>
+
+   
+    <!-- <p>Heres the extras you've selected</p>
+    <ul>
+        {% for extra in selected_extras %}
+            <li>{{ extra.extras_type  }} - {{extra.quantity }}</li>
+        {% empty %}
+            <li>No extras have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+    <button><a href="{% url 'mems_apps:confirmation' %}">confirm</a></button> -->
+    <!-- take user to confirmation page -->
+
+
+{% endblock content %}

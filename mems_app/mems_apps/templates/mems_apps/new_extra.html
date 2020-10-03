@@ -1,0 +1,13 @@
+{% extends "mems_apps/base.html" %}
+
+{% block content %}
+<p> Add new extras to the menu </p>
+
+<form action="{% url 'mems_apps:new_extra' %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name='submit'>Add to menu</button>
+</form>
+
+
+{% endblock content %}

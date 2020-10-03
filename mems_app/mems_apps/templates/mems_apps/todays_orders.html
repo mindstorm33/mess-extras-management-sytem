@@ -1,0 +1,26 @@
+{% extends "mems_apps/base.html" %}
+
+{% block content %}
+
+<h4>Admin Side</h4>
+   <h4>Today's Orders</h4>
+
+   <p> order_id -- student id  ---- extras name ---- qty ------ total</p>
+
+   <ul>
+        {% for order in orders %}
+            <li>
+                <p> {{ order.id }}  | 
+                    {{ order.student_id }}  | 
+                    {{ order.food_name }} |
+                    {{ order.quantity }} | 
+                    {{ order.amount }}
+                </p>
+            </li>
+        {% empty %}
+            <li>No one has had extras yet</li>
+        {% endfor %}
+   </ul>
+
+
+{% endblock content %}

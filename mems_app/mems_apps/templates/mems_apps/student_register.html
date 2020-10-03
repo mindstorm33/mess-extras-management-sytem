@@ -1,0 +1,13 @@
+{% extends "mems_apps/student_base.html" %}
+
+{%block content%}
+
+    <form method='post' action="{% url 'mems_apps:student_register' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">register</button>
+        <input type="hidden" name="next" value="{% url 'mems_apps:student_index' %}">
+    </form>
+
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "mems_apps/student_base.html" %}
+
+{% block content %}
+
+    <p>Choose the Extras you want to have </p>
+
+    <form action="{% url 'mems_apps:add_to_plate' %}" method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">add to plate</button>
+    </form>
+
+{% endblock content %}

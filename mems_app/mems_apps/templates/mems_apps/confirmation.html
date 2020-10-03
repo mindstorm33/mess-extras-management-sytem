@@ -1,0 +1,16 @@
+{% extends "mems_apps/student_base.html" %}
+
+{% block content %}
+    <h4>Confirmed! </h4>
+
+    <p>Show this screen to the caterer to get your extras </p>
+
+    <ul>
+        {% for selected_extra in sel_extras %}
+            <li>{{ selected_extra.extras_type  }} - {{selected_extra.quantity }}</li>
+        {% empty %}
+            <li>No extras have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends "mems_apps/base.html" %}
+
+{% block content %}
+<h3>Mess Extras Management System</h>
+<h4>Admin Side</h4>
+
+    <p>Today's Extras</p>
+
+    <ul>
+        {% for extra in avail_extras %}
+            <li>{{ extra }} price: {{ extra.price }}
+                 Number of available coupons: {{ extra.quantity }}</li>
+                 <a href="{% url 'mems_apps:remove_extra' extra.id %}"><button>remove</button></a>
+        {% empty %}
+            <li>There are no extras today</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'mems_apps:new_extra' %}"> Add new extras to the Menu</a>
+
+{% endblock content %}
